@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project1-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: project1
+  template:
+    metadata:
+      labels:
+        app: project1
+    spec:
+      containers:
+        - name: project1-container
+          image: ajaydabe/project1
+          ports:
+            - containerPort: 80
